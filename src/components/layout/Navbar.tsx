@@ -14,6 +14,8 @@ import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { useStore } from '@/store/useStore';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+// add at top of `src/components/layout/Navbar.tsx`
+import logoUrl from '@/assets/agrolinkerlogo.png';
 
 interface NavbarProps {
   onMenuClick?: () => void;
@@ -58,12 +60,16 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick, showMenuButton = false }) 
                 <Menu className="h-5 w-5" />
               </Button>
             )}
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">A</span>
-              </div>
-              <span className="text-xl font-bold text-gray-900 hidden sm:block">Agrolinker</span>
-            </Link>
+
+
+       <Link to="/" className="flex items-center gap-2">
+         <img
+           src={logoUrl}
+           alt="Agrolinker"
+           className="w-10 h-10 rounded-lg object-cover bg-green-600 p-1"
+         />
+         <span className="text-xl font-bold text-gray-900 hidden sm:block"></span>
+       </Link>
           </div>
 
           {/* Center - Navigation Links (Desktop) */}
@@ -72,7 +78,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick, showMenuButton = false }) 
               Marketplace
             </Link>
             <Link to="/tree-naira" className="text-gray-600 hover:text-green-600 font-medium transition-colors">
-              Tree Naira
+              Tree-Naira
             </Link>
             <Link to="/farm-for-me" className="text-gray-600 hover:text-green-600 font-medium transition-colors">
               Farm for Me

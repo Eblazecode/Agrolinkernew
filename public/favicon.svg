@@ -1,4 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" rx="20" fill="#16A34A"/>
-  <text x="50" y="68" font-family="Arial, sans-serif" font-size="50" font-weight="bold" fill="white" text-anchor="middle">A</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff0;
+      }
+
+      .cls-1, .cls-2 {
+        font-family: Montserrat-Bold, Montserrat;
+        font-size: 65px;
+        font-weight: 700;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        fill: #110701;
+      }
+
+      .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-6, .cls-7 {
+        stroke-width: 0px;
+      }
+
+      .cls-8 {
+        letter-spacing: 0em;
+      }
+
+      .cls-7 {
+        fill: #006837;
+      }
+    </style>
+  </defs>
+  <rect class="cls-6" width="400" height="100"/>
+  <rect class="cls-7" x="20" y="18" width="178" height="73" rx="13.41" ry="13.41"/>
+  <rect class="cls-6" x="109" y="64" width="3" height="12"/>
+  <g>
+    <text class="cls-2" transform="translate(202.76 78.35)"><tspan x="0" y="0">lin</tspan><tspan class="cls-4" x="84.04" y="0">k</tspan><tspan class="cls-3" x="126.36" y="0">r</tspan></text>
+    <text class="cls-1" transform="translate(34.75 71.45)"><tspan class="cls-5" x="0" y="0">a</tspan><tspan class="cls-3" x="40.36" y="0">g</tspan><tspan class="cls-8" x="85.86" y="0">r</tspan><tspan x="113.29" y="0">o</tspan></text>
+  </g>
 </svg>
