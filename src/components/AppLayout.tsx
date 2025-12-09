@@ -19,6 +19,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Slider } from '@/components/ui/slider';
 import { toast } from 'sonner';
+// add to the top import list
+import LandingPage from "@/pages/LandingPage";
+// add near the top of `src/components/AppLayout.tsx`
+import logoUrl from '@/assets/agrolinkerlogo.png';
+import AgrolinkrAISection  from "@/components/shared/AgroLinkrAISection";
+
+// replace the badge block in the Navbar JSX with t
 
 // Realistic Images matching product names
 const IMAGES = {
@@ -352,12 +359,21 @@ const AppLayout: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2 cursor-pointer" onClick={() => { setCurrentView('home'); resetFarmWizard(); }}>
-              <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">A</span>
-              </div>
-              <span className="text-xl font-bold text-gray-900 hidden sm:block">Agrolinker</span>
-            </div>
+
+          <div
+            className="flex items-center gap-2 cursor-pointer"
+            onClick={() => { setCurrentView('home'); resetFarmWizard(); }}
+            role="button"
+            tabIndex={0}
+            onKeyPress={(e) => { if (e.key === 'Enter' || e.key === ' ') { setCurrentView('home'); resetFarmWizard(); } }}
+          >
+            <img
+              src={logoUrl}
+              alt="Agrolinker"
+              className="w-100 h-10 rounded-lg object-cover  p-1"
+            />
+
+          </div>
           </div>
 
           <div className="hidden md:flex items-center gap-6">
@@ -418,12 +434,21 @@ const AppLayout: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">A</span>
-              </div>
-              <span className="text-xl font-bold">Agrolinker</span>
-            </div>
+
+           <div
+             className="flex items-center gap-2 cursor-pointer"
+             onClick={() => { setCurrentView('home'); resetFarmWizard(); }}
+             role="button"
+             tabIndex={0}
+             onKeyPress={(e) => { if (e.key === 'Enter' || e.key === ' ') { setCurrentView('home'); resetFarmWizard(); } }}
+           >
+             <img
+               src={logoUrl}
+               alt="Agrolinker"
+               className="w-100 h-10 rounded-lg object-cover  p-1"
+             />
+
+           </div>
             <p className="text-gray-400 text-sm">Connecting investors, farmers, and agricultural services for a sustainable future.</p>
             <div className="flex gap-4 mt-4">
               <Facebook className="h-5 w-5 text-gray-400 hover:text-green-500 cursor-pointer" />
@@ -453,8 +478,8 @@ const AppLayout: React.FC = () => {
           <div>
             <h3 className="font-semibold mb-4">Contact</h3>
             <div className="space-y-2 text-gray-400 text-sm">
-              <div className="flex items-center gap-2"><Mail className="h-4 w-4" /><span>support@agrolinker.com</span></div>
-              <div className="flex items-center gap-2"><Phone className="h-4 w-4" /><span>+234 800 123 4567</span></div>
+              <div className="flex items-center gap-2"><Mail className="h-4 w-4" /><span>support@agrolinkr.com</span></div>
+              <div className="flex items-center gap-2"><Phone className="h-4 w-4" /><span>+234 8108735258</span></div>
             </div>
           </div>
         </div>
@@ -486,10 +511,10 @@ const AppLayout: React.FC = () => {
               <Button size="lg" className="bg-green-600 hover:bg-green-700 text-lg px-8" onClick={() => isAuthenticated ? setCurrentView('dashboard') : setAuthModalOpen(true)}>
                 Invest Now <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-lg px-8">Learn More</Button>
+
             </div>
             <div className="mt-12 flex flex-wrap items-center gap-6">
-              <div className="flex items-center gap-2 text-white/80"><Shield className="h-5 w-5 text-green-400" /><span className="text-sm">SEC Regulated</span></div>
+              <div className="flex items-center gap-2 text-white/80"><Shield className="h-5 w-5 text-green-400" /><span className="text-sm">Secured and Regulated</span></div>
               <div className="flex items-center gap-2 text-white/80"><CheckCircle className="h-5 w-5 text-green-400" /><span className="text-sm">Verified Farmers</span></div>
               <div className="flex items-center gap-2 text-white/80"><Globe className="h-5 w-5 text-green-400" /><span className="text-sm">45,000+ Investors</span></div>
             </div>
@@ -497,7 +522,7 @@ const AppLayout: React.FC = () => {
         </div>
       </section>
 
-      {/* Impact Stats */}
+      {/* Impact Stats
       <section className="bg-green-600 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -507,7 +532,7 @@ const AppLayout: React.FC = () => {
             <div className="text-center"><p className="text-3xl md:text-4xl font-bold text-white">{formatNumber(impactStats.farmersEmpowered)}</p><p className="text-green-100 mt-1">Farmers Empowered</p></div>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* Features Grid */}
       <section className="py-20 bg-gray-50">
@@ -577,6 +602,8 @@ const AppLayout: React.FC = () => {
         </div>
       </section>
 
+      <AgrolinkrAISection/>
+
       {/* CTA Section */}
       <section className="py-20 bg-green-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -586,7 +613,7 @@ const AppLayout: React.FC = () => {
             <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 text-lg px-8" onClick={() => setAuthModalOpen(true)}>
               Create Account <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-lg px-8" onClick={() => setCurrentView('marketplace')}>
+            <Button size="lg" variant="outline" className="border-white text-black hover:bg-white/10 text-lg px-8" onClick={() => setCurrentView('marketplace')}>
               Browse Marketplace
             </Button>
           </div>
